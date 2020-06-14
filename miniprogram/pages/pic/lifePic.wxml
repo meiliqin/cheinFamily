@@ -1,0 +1,34 @@
+<!--miniprogram/pages/pic/life.wxml-->
+<view>
+	<view class="swiper-tab">
+		<view wx:for="{{tabList}}" wx:key="{{index}}" bindtap="swichNav" data-current="{{index}}" class="swiper-tab-list {{currentTab==index ? 'on' : ''}}">{{item}}</view>
+
+	</view>
+
+	<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+		<swiper-item wx:for="{{tabList}}">
+			<scroll-view scroll-y="true" class="scoll-h" bindscrolltolower='lower'>
+
+				<view class="card" wx:for="{{items}}">
+
+					<view data-url="{{item.fileID}}" data-id="{{item._id}}" bindlongtap = "onlongclick">
+						<image class="image" mode="widthFix" src="{{item.fileID}}" />
+					</view>
+
+				</view>
+			</scroll-view>
+
+		</swiper-item>
+
+	</swiper>
+
+	<view bindtap='adddetial'>
+
+		<image class="add_icon" src="../../images/add_icon.png"></image>
+
+	</view>
+
+	<modal title="是否删除图片？" confirm-text="删除" cancel-text="取消" 
+    hidden="{{modalHidden}}" bindconfirm="onDeleteClick" bindcancel="onCancelClick">
+</modal>
+</view>

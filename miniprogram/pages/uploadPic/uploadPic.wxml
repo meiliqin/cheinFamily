@@ -1,0 +1,32 @@
+<!--miniprogram/pages/uploadPic/uploadPic.wxml-->
+<view class='pages'>
+  <!-- <view class='top'><text class='top_name'>商品图片：</text></view> -->
+  <!-- 图片 -->
+  <view class="images_box">
+    <block wx:key="imgbox" wx:for="{{imgbox}}">
+      <view class='img-box'>
+        <image class='img' src='{{item}}' mode="aspectFill" ></image>
+        <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete1'>
+          <image class='img' src='../../images/delect.png'></image>   
+        </view>
+      </view>
+    </block>
+    <view class='img-box' bindtap='addPic1' wx:if="{{imgbox.length<9}}">
+      <image class='img' src='../../images/add_image.png'></image>   
+    </view>
+  </view>
+
+  <view class="section">
+  <!-- <view class="section__title">请选择分类</view> -->
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{cateList}}">
+    <view class="picker">
+      请选择分类：{{array[index]}}
+    </view>
+  </picker>
+</view>
+  <button bindtap='fb'>上传图片</button>
+
+
+</view>
+
+

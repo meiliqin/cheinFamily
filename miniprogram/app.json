@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/pic/xixiPic",
+    "pages/pic/lifePic",
+    "pages/pic/familyPic",
+    "pages/uploadPic/uploadPic"
+  ],
+  "window": {
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "cheinFamily",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#647686",
+    "selectedColor": "#EC4747",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/xixi_selected.png",
+        "iconPath": "images/xixi_unselect.png",
+        "pagePath": "pages/pic/xixiPic",
+        "text": "xixi"
+      },
+      {
+        "selectedIconPath": "images/love_selected.png",
+        "iconPath": "images/love_unselect.png",
+        "pagePath": "pages/pic/lifePic",
+        "text": "life"
+      },
+      {
+        "selectedIconPath": "images/family_selected.png",
+        "iconPath": "images/family_unselect.png",
+        "pagePath": "pages/pic/familyPic",
+        "text": "family"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap40.json"
+}

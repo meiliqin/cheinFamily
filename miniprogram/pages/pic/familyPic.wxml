@@ -1,0 +1,24 @@
+<!--miniprogram/pages/pic/familyPic.wxml-->
+<view>
+
+<scroll-view scroll-y="true" class="scoll-h" bindscrolltolower='lower'>
+
+				<view class="card" wx:for="{{items}}">
+
+					<view data-url="{{item.fileID}}" data-id="{{item._id}}" bindlongtap = "onlongclick">
+						<image class="image" mode="widthFix" src="{{item.fileID}}" />
+					</view>
+
+				</view>
+			</scroll-view>
+
+      	<view bindtap='adddetial'>
+
+		<image class="add_icon" src="../../images/add_icon.png"></image>
+
+	</view>
+
+	<modal title="是否删除图片？" confirm-text="删除" cancel-text="取消" 
+    hidden="{{modalHidden}}" bindconfirm="onDeleteClick" bindcancel="onCancelClick">
+</modal>
+</view>
